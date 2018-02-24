@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="itemListEvent"
+            type="com.product.aji.soaltest.commands.ItemList"/>
+    </data>
+    <LinearLayout
+        android:padding="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:id="@+id/listItem"
+            android:dividerHeight="5dp">
+
+        </ListView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New"
+            android:onClick="@{(V)->itemListEvent.AddNewOnclick()}"/>
+    </LinearLayout>
+</layout>
