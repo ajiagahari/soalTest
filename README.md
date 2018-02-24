@@ -20,3 +20,4 @@
 muncul toast Finishing
 9. tidak ada permission CALL_USER
 10. muncul log level debug tag BINAR message habis dibagi 3
+11. user yang memakai bisa ditambah, tp masih saya default satu, saya memakai greedDAO untuk SQL database nya, MVVM architecture.. terimakasih
