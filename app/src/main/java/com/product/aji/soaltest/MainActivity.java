@@ -59,12 +59,18 @@ public class MainActivity extends AppCompatActivity {
     public Boolean checkLogin(){
         Boolean istrue = false;
         UserDao userDao = daoSession.getUserDao();
-        com.product.aji.db.User userd = userDao.queryBuilder()
-                .where(UserDao.Properties.Username.eq(activityMainBinding.getLogin().getUsername())).orderAsc(UserDao.Properties.Id).list().get(0);
-        Log.d("ini log","DAO username"+userd.getUsername()+" DAO password"+userd.getPassword());
-        Log.d("ini log 2","bind username"+activityMainBinding.getLogin().getUsername()+" bind password"+activityMainBinding.getLogin().getPassword());
-        if (Objects.equals(userd.getPassword(), activityMainBinding.getLogin().getPassword())){
-            istrue = true;
+        try {
+            com.product.aji.db.User userd = userDao.queryBuilder()
+                    .where(UserDao.Properties.Username.eq(activityMainBinding.getLogin().getUsername())).orderAsc(UserDao.Properties.Id).list().get(0);
+            Log.d("ini log","DAO username"+userd.getUsername()+" DAO password"+userd.getPassword());
+            Log.d("ini log 2","bind username"+activityMainBinding.getLogin().getUsername()+" bind password"+activityMainBinding.getLogin().getPassword());
+            if (Objects.equals(userd.getPassword(), activityMainBinding.getLogin().getPassword())){
+                istrue = true;
+            }
+
+        }
+        catch (Exception ex){
+
         }
         return istrue;
     }
